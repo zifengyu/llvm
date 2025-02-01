@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.31.5)
-project("calc")
+project("llvm")
 
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(LLVM REQUIRED CONFIG)
@@ -12,5 +13,5 @@ add_definitions(${LLVM_DEFINITIONS_LIST})
 include_directories(SYSTEM ${LLVM_INCLUDE_DIRS})
 llvm_map_components_to_libnames(llvm_libs Core)
 
-add_subdirectory("src")
+add_subdirectory("calc")
 
